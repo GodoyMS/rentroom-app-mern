@@ -6,7 +6,7 @@ const bcryptSalt = bcrypt.genSaltSync(10);
 const dotenv=require('dotenv').config();
 
 
-const jwtSecret = process.env.jwtSecret;
+const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg'
 
 //Test
 router.get('/test', (req,res) => {
@@ -36,7 +36,6 @@ router.post('/register', async (req,res) => {
 router.post('/login', async (req,res) => {
   const {email,password} = req.body;
   const userDoc = await User.findOne({email});
-  User.$where
   if (userDoc) {
     const passOk = bcrypt.compareSync(password, userDoc.password);
     console.log(userDoc)
