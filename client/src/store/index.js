@@ -1,7 +1,7 @@
 import { proxy } from "valtio";
 
 const state =proxy({
-    backendurl:'https://rentroom-app-backend.onrender.com/gi'
+    backendurl:'https://rentroom-app-backend.onrender.com/'
     //https://rentroom-app-backend.onrender.com/
 });
 
