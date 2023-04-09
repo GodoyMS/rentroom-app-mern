@@ -2,10 +2,11 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User') 
 const router = require('express').Router();
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 const bcryptSalt = bcrypt.genSaltSync(10);
+const dotenv=require('dotenv').config();
 
 
+const jwtSecret = process.env.jwtSecret;
 
 //Test
 router.get('/test', (req,res) => {

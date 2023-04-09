@@ -3,7 +3,6 @@ const mongoose=require('mongoose');
 const cors=require('cors');
 const dotenv=require('dotenv').config();
 const cookieParser = require('cookie-parser');
-
 const app=express();
 app.use(express.json());
 app.use(cookieParser());
@@ -14,7 +13,7 @@ app.use('/uploads', express.static(__dirname+'/uploads'));
 //Use cors to allow requests from diff url
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3000',
+  origin: process.env.CLIENT_URL,
 }));
 
 //Database MONGODB with mongoose
