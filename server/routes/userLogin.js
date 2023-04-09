@@ -6,7 +6,7 @@ const bcryptSalt = bcrypt.genSaltSync(10);
 const dotenv=require('dotenv').config();
 
 
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg'
+const jwtSecret = process.env.jwtSecret
 
 //Test
 router.get('/test', (req,res) => {

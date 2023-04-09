@@ -11,7 +11,7 @@ const fs = require('fs');
 const dotenv=require('dotenv').config();
 
 const router = require('express').Router();
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg'
+const jwtSecret = process.env.jwtSecret
 
 
 
