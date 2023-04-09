@@ -11,10 +11,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 
 //Use cors to allow requests from diff url
-app.use(cors({
-  credentials: true,
-  origin: process.env.CLIENT_URL,
-}));
+app.use(cors());
 
 //Database MONGODB with mongoose
 mongoose.connect(process.env.MONGO_URL,{
