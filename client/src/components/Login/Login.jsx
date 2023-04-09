@@ -29,10 +29,12 @@ function LoginPage() {
 
   const handleSubmit =  async (values) => {
     try {
-      const {data}= await axios.post('/login', values)
-     setUser(data);
-     alert('Login successful');
-     setRedirect(true);
+      await axios.post('/login', values)
+        .then((response)=>setUser(response.data))
+        .then(()=>alert('Login succesful'))
+        .then(()=>setRedirect(true))
+        .catch((e)=>console.log(e))
+  
       
     } catch (error) {
       alert('Login failed');

@@ -25,8 +25,11 @@ import {Button} from '@mui/material';
 import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
 import state from '../../store';
 import { useSnapshot } from 'valtio';
+import { useContext } from 'react';
+import { UserContext } from '../../utils/UserContext';
 
 const Home = () => {
+  const {user}=useContext(UserContext)
   const [allRentPlaces,setAllRentPlaces]=useState([]);
   const[isSearchMode,setIsSearchMode]=useState(false);
   const[countrySearch,setCountrySearch]=useState("");
@@ -52,8 +55,8 @@ const Home = () => {
       setIsLoading(false);
     })
   },[]);
+  console.log(user)
   
- console.log(allRentPlaces)
   return (
     <Container>
       <CssBaseline />
