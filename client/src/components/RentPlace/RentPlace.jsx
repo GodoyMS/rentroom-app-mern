@@ -26,7 +26,7 @@ const RentPlace = () => {
     const [modalOpen,setModalOpen]=useState(false)
     const handleOpen = () => setModalOpen(true);
     const handleClose = () => setModalOpen(false);
-
+    console.log(user);
     async function saveToFavorites(ev) {
       ev.preventDefault();
       const favoritePlaceData = {
