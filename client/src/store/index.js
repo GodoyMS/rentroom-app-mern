@@ -1,7 +1,7 @@
 import { proxy } from "valtio";
 
 const state =proxy({
-    backendurl:'http://localhost:4000/'
+    backendurl:'https://rentroom-app-backend.onrender.com'
 });
 
 export default state;
