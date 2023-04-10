@@ -31,7 +31,7 @@ import LeftCornerGitHub from "./components/LeftCornerGithub/LeftCornerGithub";
 function App() {
   const snap=useSnapshot(state)
   axios.defaults.baseURL = snap.backendurl;
-axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true; 
 
   return (
     <UserContextProvider>

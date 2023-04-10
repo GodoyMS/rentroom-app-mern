@@ -30,7 +30,7 @@ function LoginPage() {
   const handleSubmit =  async (values) => {
     try {
       await axios.post('/login', values)
-        .then((response)=>setUser(response.data))
+        .then((response)=>{setUser(response.data)})
         .then(()=>alert('Login succesful'))
         .then(()=>setRedirect(true))
         .catch((e)=>console.log(e))

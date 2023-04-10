@@ -9,10 +9,13 @@ function Account() {
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
   const [shortDescription,setShortDescription] = useState('');
-
+  
   useEffect(() => {      
-    axios.get('/profile').then(response => {
+    axios.get('/profile',{
+      withCredentials: true
+    }).then(response => {
        const {data} = response;
+       console.log(data)
        setName(data.name);
        setEmail(data.email);  
        setShortDescription(data.shortDescription);       

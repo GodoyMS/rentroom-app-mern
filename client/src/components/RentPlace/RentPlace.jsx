@@ -37,16 +37,12 @@ const RentPlace = () => {
         
 
       }else{
-        try {
            await axios.post('/account/postfavorite', favoritePlaceData)
             .then((e)=>{alert(e.statusText,"hi")})
-            .catch(err=>{alert(err)});
+            .catch(err=>{console.log(err)});
   
           
-        } catch (error) {
-          console.log(error)
-          
-        }
+       
       }      
     
       }
