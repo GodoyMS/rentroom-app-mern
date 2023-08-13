@@ -39,7 +39,11 @@ function getUserDataFromReq(req) {
 
 
   //Get user information
-  router.get('/profile', (req,res) => {
+  router.get('/profile', (req,res,next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://rentroom-app-mern.vercel.app");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
     const {token} = req.cookies;
     if (token) {
       jwt.verify(token, jwtSecret, options, async (err, decodedUserData) => {
@@ -54,7 +58,11 @@ function getUserDataFromReq(req) {
 
 
     //Update user information
-    router.put('/update-profile', async (req,res) => {
+    router.put('/update-profile', async (req,res,next) => {
+      res.setHeader("Access-Control-Allow-Origin", "https://rentroom-app-mern.vercel.app");
+      res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      next();
       const {token} = req.cookies;
       const {name,email,shortDescription} = req.body;
       console.log(req.body);
@@ -118,7 +126,11 @@ function getUserDataFromReq(req) {
 
 
   //Get all rentplaces by user
-  router.get('/user-rentplaces', (req,res) => {
+  router.get('/user-rentplaces', (req,res,next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://rentroom-app-mern.vercel.app");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
     const {token} = req.cookies;
     jwt.verify(token, jwtSecret, {}, async (err, decodedUserData) => {
       const {id} = decodedUserData;
@@ -226,7 +238,12 @@ function getUserDataFromReq(req) {
   
   
   //Get all favorites rentPlaces per user
-  router.get('/account/retrievefavorites', async (req,res) => {
+  router.get('/account/retrievefavorites', async (req,res,next) => {
+
+    res.setHeader("Access-Control-Allow-Origin", "https://rentroom-app-mern.vercel.app");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
     const userData = await getUserDataFromReq(req);
     res.json( await Favorites.find({user:userData.id}).populate('rentPlace') );
   });
