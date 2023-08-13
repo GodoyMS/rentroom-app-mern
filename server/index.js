@@ -30,13 +30,9 @@ app.use(
   cors({
     credentials: true,
     origin:"https://monkfish-app-8cpk3.ondigitalocean.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allowedHeaders: [
-      "Authorization",
-      "Content-Type",
-      "Access-Control-Allow-Headers",
-      "Access-Control-Allow-Methods",
-    ],
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    
   })
 );
 
