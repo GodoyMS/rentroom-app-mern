@@ -24,6 +24,7 @@ app.use(
       "Content-Type",
       "Access-Control-Allow-Headers",
       "Access-Control-Allow-Methods",
+      "Access-Control-Allow-Origin"
     ],
 
   })
