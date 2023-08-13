@@ -27,6 +27,7 @@ import state from '../../store';
 import { useSnapshot } from 'valtio';
 import { useContext } from 'react';
 import { UserContext } from '../../utils/UserContext';
+import { backendURL } from '../../config/config';
 
 const Home = () => {
   const {user}=useContext(UserContext)
@@ -148,7 +149,7 @@ const Home = () => {
               sx={{position:'relative'}}
               component="img"
               height="300"
-              image={snap.backendurl +rentPlace.photos[0]}
+              image={backendURL +rentPlace.photos[0]}
               alt={rentPlace.title}/>        
             
             </Link>
@@ -209,7 +210,7 @@ const Home = () => {
                   sx={{position:'relative'}}
                   component="img"
                   height="300"
-                  image={snap.backendurl +rentPlace.photos[0]}
+                  image={backendURL +rentPlace.photos[0]}
                   alt={rentPlace.title}/>                        
                 </Link>    
 

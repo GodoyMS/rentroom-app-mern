@@ -2,6 +2,7 @@ import React from 'react'
 import { Dialog, DialogTitle,ImageList,ImageListItem } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import state from '../../store';
+import { backendURL } from '../../config/config';
 const GalleryModal = ({open,setOpen,place}) => {
     const snap=useSnapshot(state)
     function srcset(image, size, rows = 1, cols = 1) {
@@ -25,7 +26,7 @@ const GalleryModal = ({open,setOpen,place}) => {
                      alt={photo.title}
                      {...srcset(photo.img, 121, photo.rows, photo.cols)}
 
-                     src={snap.backendurl+photo}
+                     src={backendURL+photo}
                      
                      loading="lazy"
                     

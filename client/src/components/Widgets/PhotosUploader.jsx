@@ -14,6 +14,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useSnapshot } from "valtio";
 import state from "../../store";
+import { backendURL } from "../../config/config";
 
 export default function PhotosUploader({addedPhotos,onChange}) {
   const [photoLink,setPhotoLink] = useState('');
@@ -84,7 +85,7 @@ export default function PhotosUploader({addedPhotos,onChange}) {
           <img
             {...srcset(link.img, 121, link.rows, link.cols)}
 
-            src={snap.backendurl+link}
+            src={backendURL+link}
             alt={''}
             loading="lazy"
           />

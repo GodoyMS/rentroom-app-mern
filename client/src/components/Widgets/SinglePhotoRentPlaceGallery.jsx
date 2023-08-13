@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageListItem } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import state from '../../store';
+import { backendURL } from '../../config/config';
 
 
 
@@ -22,7 +23,7 @@ const SinglePhotoRentPlaceGallery = ({place,rowColumn,index}) => {
      alt={place.photos[index]}
      {...srcset(place.photos[index].img, 121, place.photos[index].rows, place.photos[index].cols)}
 
-     src={snap.backendurl+place.photos[index]}
+     src={backendURL+place.photos[index]}
      
      loading="lazy"
     

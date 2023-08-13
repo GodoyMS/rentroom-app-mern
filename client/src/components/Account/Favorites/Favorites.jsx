@@ -15,6 +15,7 @@ import FindInPageIcon from '@mui/icons-material/FindInPage';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useSnapshot } from 'valtio';
 import state from '../../../store';
+import { backendURL } from '../../../config/config';
 const Favorites = () => {
   const snap=useSnapshot(state)
 
@@ -52,7 +53,7 @@ const Favorites = () => {
                   component="img"
                   alt="Rent place photo"
                   height="140"
-                  image={snap.backendurl+rentPlace.rentPlace.photos[0]}
+                  image={backendURL+rentPlace.rentPlace.photos[0]}
                 />
 
             </Link>

@@ -14,6 +14,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import { useSnapshot } from 'valtio';
 import state from '../../../store';
+import { backendURL } from '../../../config/config';
 const RentPlacesAccount = () => {
 
   const [rentPlaces,setRentPlaces]=useState([]);
@@ -36,7 +37,7 @@ const RentPlacesAccount = () => {
                   component="img"
                   alt="Rent place photo"
                   height="140"
-                  image={snap.backendurl+rentPlace.photos[0]}
+                  image={backendURL+rentPlace.photos[0]}
                 />
 
             </Link>
