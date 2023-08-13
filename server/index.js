@@ -18,8 +18,7 @@ app.use(
   cors({
     credentials: true,
     origin: "https://rentroom-app-mern.vercel.app",
-    optionsSuccessStatus: 200,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+
   })
 );
 
