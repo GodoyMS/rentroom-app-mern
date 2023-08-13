@@ -29,7 +29,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: process.env.CLIENT_TRUE,
+    origin:"https://monkfish-app-8cpk3.ondigitalocean.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: [
       "Authorization",
