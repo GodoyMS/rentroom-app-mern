@@ -49,7 +49,7 @@ const RentPlace = () => {
       setModalOpen(true);
     } else {
       await axios
-        .post("/account/postfavorite", favoritePlaceData)
+        .post("/account/postfavorite", favoritePlaceData,{withCredentials:"include"})
         .then((e) => {
           alert(e.statusText, "hi");
         })

@@ -21,9 +21,9 @@ const RentPlacesAccount = () => {
   const snap=useSnapshot(state)
 
   useEffect(() => {
-    axios.get('/user-rentplaces').then(({data}) => {
+    axios.get('/user-rentplaces',{withCredentials:"include"}).then(({data}) => {
       setRentPlaces(data);
-    })
+    }).catch((e)=>console.log(e))
   },[]);
   return (
     <Container component="main" maxWidth="lg">

@@ -12,7 +12,7 @@ function Account() {
   
   useEffect(() => {      
     axios.get('/profile',{
-      withCredentials: true
+      withCredentials: "include"
     }).then(response => {
        const {data} = response;
        console.log(data)
