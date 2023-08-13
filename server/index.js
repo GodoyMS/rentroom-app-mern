@@ -29,7 +29,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin:"https://monkfish-app-8cpk3.ondigitalocean.app",
+    origin:"https://rentroom-app-mern.vercel.app",
     optionsSuccessStatus: 200,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     
