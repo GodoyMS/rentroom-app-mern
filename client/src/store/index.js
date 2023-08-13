@@ -1,7 +1,7 @@
 import { proxy } from "valtio";
 
 const state =proxy({
-    backendurl:'https://blooming-tundra-37888.herokuapp.com/'
+    backendurl:'http://localhost:4000/'
     //https://rentroom-app-backend.onrender.com/
 });
 

@@ -159,7 +159,7 @@ const Home = () => {
             
               avatar={
                 <Avatar sx={{ bgcolor: lightBlue[500] }} aria-label="recipe">
-                  {rentPlace.ownerName.slice(0,1)}
+                  {rentPlace?.ownerName?.slice(0,1)}
                 </Avatar>
               }
               action={
