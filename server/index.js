@@ -8,20 +8,29 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-
-
-
 //Define a route for uploading images
 app.use("/uploads", express.static(__dirname + "/uploads"));
+
+// Middleware to set secure: false for all cookies
+app.use((req, res, next) => {
+  res.cookie = function (name, value, options = {}) {
+    // Set secure to false in the options object
+    options.secure = false;
+
+    // Call the original res.cookie() function
+    res.cookie(name, value, options);
+  };
+
+  next();
+});
 
 //Use cors to allow requests from diff url
 app.use(
   cors({
     credentials: true,
-    origin:"https://rentroom-app-mern.vercel.app",
+    origin: "https://rentroom-app-mern.vercel.app",
     optionsSuccessStatus: 200,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   })
 );
 
@@ -45,19 +54,6 @@ mongoose
   .then(() => console.log("DB Connected"))
   .catch((err) => console.log(err));
 
-
-  // Middleware to set secure: false for all cookies
-app.use((req, res, next) => {
-  res.cookie = function(name, value, options = {}) {
-    // Set secure to false in the options object
-    options.secure = false;
-
-    // Call the original res.cookie() function
-    res.cookie(name, value, options);
-  };
-
-  next();
-});
 //Use the routes;
 app.use("/", userLogin);
 app.use("/", userEvents);
