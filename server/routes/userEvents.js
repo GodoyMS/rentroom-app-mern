@@ -13,11 +13,24 @@ const dotenv=require('dotenv').config();
 const router = require('express').Router();
 const jwtSecret = process.env.jwtSecret
 
+// Middleware to set secure: false for all cookies
+// app.use((req, res, next) => {
+//   res.cookie = function (name, value, options = {}) {
+//     // Set secure to false in the options object
+//     options.secure = false;
 
+//     // Call the original res.cookie() function
+//     res.cookie(name, value, options);
+//   };
+
+//   next();
+// });
 
 function getUserDataFromReq(req) {
     return new Promise((resolve, reject) => {
-      jwt.verify(req.cookies.token, jwtSecret, {}, async (err, decodedUserData) => {
+      jwt.verify(req.cookies.token, jwtSecret, options, async (err, decodedUserData) => {
+        options.secure=false;
+        option.samesite="none";
         if (err) throw err;
         resolve(decodedUserData);
       });
@@ -29,7 +42,7 @@ function getUserDataFromReq(req) {
   router.get('/profile', (req,res) => {
     const {token} = req.cookies;
     if (token) {
-      jwt.verify(token, jwtSecret, {}, async (err, decodedUserData) => {
+      jwt.verify(token, jwtSecret, options, async (err, decodedUserData) => {
         if (err) throw err;
         const {name,email,shortDescription,_id} = await User.findById(decodedUserData.id);
         res.json({name,email,shortDescription,_id});
