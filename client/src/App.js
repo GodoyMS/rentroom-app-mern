@@ -26,7 +26,6 @@ import { backendURL } from "./config/config";
 function App() {
   const snap = useSnapshot(state);
   axios.defaults.baseURL = backendURL;
-  axios.defaults.withCredentials = "include";
 
   return (
     <UserContextProvider>

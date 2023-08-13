@@ -20,7 +20,7 @@ function Account() {
        setEmail(data.email);  
        setShortDescription(data.shortDescription);       
 
-    });
+    }).catch((e)=>console.log(e));
   }, []);
 
   async function submitUpdateProfile(ev) {
