@@ -1,1 +1,1 @@
-export const backendURL="https://monkfish-app-8cpk3.ondigitalocean.app/";
+export const backendURL=process.env.REACT_APP_BACKEND;
