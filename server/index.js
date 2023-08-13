@@ -9,18 +9,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-// Middleware to set secure: false for all cookies
-app.use((req, res, next) => {
-  res.cookie = function(name, value, options = {}) {
-    // Set secure to false in the options object
-    options.secure = false;
 
-    // Call the original res.cookie() function
-    res.cookie(name, value, options);
-  };
-
-  next();
-});
 
 //Define a route for uploading images
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -56,6 +45,19 @@ mongoose
   .then(() => console.log("DB Connected"))
   .catch((err) => console.log(err));
 
+
+  // Middleware to set secure: false for all cookies
+app.use((req, res, next) => {
+  res.cookie = function(name, value, options = {}) {
+    // Set secure to false in the options object
+    options.secure = false;
+
+    // Call the original res.cookie() function
+    res.cookie(name, value, options);
+  };
+
+  next();
+});
 //Use the routes;
 app.use("/", userLogin);
 app.use("/", userEvents);
