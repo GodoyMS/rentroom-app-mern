@@ -59,7 +59,7 @@ const Home = () => {
   console.log(user)
   
   return (
-    <Container>
+    <Container style={{paddingBottom:"200px"}}>
       <CssBaseline />
 
       <Grid container spacing={2} sx={{mt:1,mb:2}}>
