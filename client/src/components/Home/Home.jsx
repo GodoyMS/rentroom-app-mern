@@ -176,7 +176,7 @@ const Home = () => {
               {`$ ${rentPlace.monthlyPrice} / Month`}
               </Typography>
               <Typography variant="subtitle2" color="text.secondary"  aria-label="more">
-                {`Publication date: ${rentPlace.date.slice(0, 10)}`}
+                {`Publication date: ${rentPlace?.date?.slice(0, 10)}`}
               </Typography>
             </CardContent>
 
@@ -185,19 +185,8 @@ const Home = () => {
             <FavoriteIcon sx={{color:red[500]}}/>
             </IconButton>
             </Tooltip>
-
-              
-
-
-           
-           
-            
-
           </Card>
-          
-
         </Grid>
-          
         ))}
 
       {allRentPlaces.length>0 && isSearchMode && allRentPlaces.map((rentPlace)=>{
@@ -211,14 +200,14 @@ const Home = () => {
                   component="img"
                   height="300"
                   image={backendURL +rentPlace.photos[0]}
-                  alt={rentPlace.title}/>                        
+                  alt={rentPlace?.title}/>                        
                 </Link>    
 
                 <CardHeader
                 
                   avatar={
                     <Avatar sx={{ bgcolor: lightBlue[500] }} aria-label="recipe">
-                      {rentPlace.ownerName.slice(0,1)}
+                      {rentPlace?.ownerName?.slice(0,1)}
                     </Avatar>
                   }
                   action={
@@ -234,7 +223,7 @@ const Home = () => {
                   {`$ ${rentPlace.monthlyPrice} / Month`}
                   </Typography>
                   <Typography variant="subtitle2" color="text.secondary"  aria-label="more">
-                    {`Publication date: ${rentPlace.date.slice(0, 10)}`}
+                    {`Publication date: ${rentPlace?.date?.slice(0, 10)}`}
                   </Typography>
                 </CardContent>
 

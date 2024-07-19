@@ -12,12 +12,11 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-
 //Use cors to allow requests from diff url
 app.use(
   cors({
     credentials: true,
-    origin: "https://rentroom-app-mern.vercel.app",
+    origin: "http://localhost:3000",//["https://rentroom-app-mern.vercel.app","http://localhost:3000"]
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: [
       "Authorization",

@@ -39,7 +39,7 @@ async function submitRentPlace(ev) {
      maxPeople, monthlyPrice
   };
 
-    await axios.post('/account/rentplaces/post', rentPlaceData);
+    await axios.post('/account/rentplaces/post', rentPlaceData,{withCredentials:true});
     setRedirect(true);
   }
 
