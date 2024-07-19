@@ -24,7 +24,7 @@ const jwtSecret = process.env.jwtSecret;
 
 //   next();
 // });
-const FRONTURL="http://localhost:3000"
+const FRONTURL=process.env.CLIENT_URL
 
 function getUserDataFromReq(req) {
   const options = {

@@ -16,7 +16,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",//["https://rentroom-app-mern.vercel.app","http://localhost:3000"]
+    origin:process.env.CLIENT_URL,//["https://rentroom-app-mern.vercel.app","http://localhost:3000"]
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: [
       "Authorization",
